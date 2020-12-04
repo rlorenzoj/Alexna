@@ -4,17 +4,91 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Bootstrap CSS -->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../Scripts/mdb/css/mdb.min.css" rel="stylesheet" />
+
+    <link href="../Scripts/mdb/css/addons/datatables2.min.css" rel="stylesheet" />
+    <link href="../Scripts/mdb/css/addons/datatables-select2.min.css" rel="stylesheet" />
+
+    <!-- Main css -->
+    <link href="../Styles/Principal.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-3.5.1.min.js"></script>
+    <script src="../Scripts/umd/popper.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/moment-with-locales.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="../Scripts/mdb/js/mdb.min.js"></script>
+
+    <script src="../Scripts/mdb/js/addons/datatables2.min.js"></script>
+    <script src="../Scripts/mdb/js/addons/datatables-select2.min.js"></script>
+
+    <script src="../Framework/Dolf.js"></script>
+    <script src="../Idiomas/Literales.js"></script>
+
+
+    <title>ALEXNA</title>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+    <div class="view intro-2" style="padding-top: 90px;">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <span class="navbar-brand">
+                <img src="/Images/SmallLogo.png" height="45" class="d-inline-block align-top" alt="" />
+            </span>
+            <h2 class="navbar-text white-text">
+                Alexna Formación
+            </h2>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-5" id="menuPrincipal">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="inicio.aspx">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Alumnos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profesores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clases</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="tablasAuxiliaresDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tablas auxiliares</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="tablasAuxiliaresDropdown">
+                            <a class="dropdown-item" href="Festivos.aspx">Festivos</a>
+                            <a class="dropdown-item" href="InformesClases.aspx">Informes</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Salir</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
 </body>
 </html>
+
+<script src="../Js/Principal.js"></script>
+
+<asp:ContentPlaceHolder ID="ScriptsPlaceHolder" runat="server">
+</asp:ContentPlaceHolder>

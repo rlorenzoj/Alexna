@@ -1,0 +1,19 @@
+﻿.view {
+    background: url("../Images/alexna_fondo.png")no-repeat center center;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
