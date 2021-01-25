@@ -24,9 +24,15 @@ namespace Alexna.Managers
 
         public static List<Festivos> GetFestivos(int? year)
         {
-            return (from f in db.Festivos
-                    where year == null || f.Festivo_Fecha.Year == year
-                    select f).ToList();
+            try
+            {
+                return (from f in db.Festivos
+                        where year == null || f.Festivo_Fecha.Year == year
+                        select f).ToList();
+            } catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public static bool IsFestivo(DateTime fecha)

@@ -106,6 +106,13 @@
             $('#centralModalDanger').modal('show');
         }
 
+        function HideLoading() {
+            $('#loadingModal').modal('hide');
+            //setTimeout(function () {
+            //    $('#loadingModal').remove();
+            //}, 10);
+        }
+
         function InfoModal(title, message, callback) {
             if (typeof callback !== 'undefined') {
                 if (typeof callback !== 'function') {
@@ -160,16 +167,19 @@
         }
 
         function Loading(message) {
-            const $modalDiv = $('<div id="loadingModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1"></div>');
+            const $modalDiv = $('<div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel"></div>');
             const $divPrincipal = $('<div class="modal-dialog modal-sm" role="document"></div>');
             const $divContenido = $('<div class="modal-content"></div>');
-            const spinner = $('<span class="fa fa-spinner fa-spin fa-3x"></span>');
+            const $divBody = $('<div class="modal-body text-center"></div>');
+            const $divLoader = $('<div class="loader"></div>')
+
+            $divBody.append($divLoader);
             if (message) {
-                const $spanTexto = $('<span>' + message + '</span>')
-                $divContenido.append($spanTexto);
+                const $divLoaderText = $('<div clas="loader-txt">' + message + '</div>')
+                $divBody.append($divLoaderText);
             }
 
-            $divContenido.prepend(spinner);
+            $divContenido.append($divBody);
             $divPrincipal.append($divContenido);
             $modalDiv.append($divPrincipal);
             $('body').append($modalDiv);
@@ -354,6 +364,7 @@
 
         return {
             DangerModal: DangerModal,
+            HideLoading: HideLoading,
             InfoModal: InfoModal,
             Loading: Loading,
             QuestionModal: QuestionModal,

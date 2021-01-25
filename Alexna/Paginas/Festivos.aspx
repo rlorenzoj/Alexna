@@ -9,6 +9,7 @@
                 <tr>
                     <th>Fecha</th>
                     <th>Festivo</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
         </table>

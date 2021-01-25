@@ -28,7 +28,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -297,6 +297,7 @@
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="css\main.css" />
+    <Content Include="css\reset.css" />
     <Content Include="css\util.css" />
     <Content Include="Framework\Dolf.js" />
     <Content Include="Idiomas\Literales.js" />
@@ -306,6 +307,7 @@
     <Content Include="Images\icons\favicon.ico" />
     <Content Include="Images\icons\map-marker.png" />
     <Content Include="Images\SmallLogo.png" />
+    <Content Include="Js\Extend.js" />
     <Content Include="Js\Festivos.js" />
     <Content Include="Js\Inicio.js" />
     <Content Include="Js\Login.js" />
@@ -592,6 +594,7 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Service1.svc" />
     <Content Include="Services\Login.svc" />
+    <Content Include="Services\SvcFestivos.svc" />
     <Content Include="Services\Usuario.svc" />
     <Content Include="Styles\Principal.css" />
     <Content Include="Web.config" />
@@ -617,6 +620,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>alexna.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFestivo.cs" />
     <Compile Include="Interfaces\ILogin.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
     <Compile Include="Managers\ClsFestivos.cs" />
@@ -650,12 +654,16 @@
     <Compile Include="Services\Login.svc.cs">
       <DependentUpon>Login.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\SvcFestivos.svc.cs">
+      <DependentUpon>SvcFestivos.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\Usuario.svc.cs">
       <DependentUpon>Usuario.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Plantillas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Paginas\Principal.Master" />

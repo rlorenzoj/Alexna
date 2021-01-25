@@ -3,7 +3,7 @@ using System.Web;
 
 namespace Alexna.Services
 {
-    public class Usuario : Interfaces.IUsuario
+    public class Usuario : IUsuario
     {
         string IUsuario.GetUserInfo()
         {
