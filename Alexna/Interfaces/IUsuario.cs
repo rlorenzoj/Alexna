@@ -6,6 +6,6 @@ namespace Alexna.Interfaces
     interface IUsuario
     {
         [OperationContract]
-        string GetUserInfo();
+        Alexna.Datos.Usuarios GetUserInfo();
     }
 }

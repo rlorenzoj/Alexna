@@ -29,7 +29,8 @@
         };
         const async = true;
         const ok = function (data) {
-            if (data === true) {
+            if (data) {
+                Dolf.Sesion.setUsuario(data);
                 window.location = '/Paginas/Inicio.aspx';
             } else {
                 Dolf.Ventana.WarningModal('Login', 'El usuario / contraseña introducidos no son correctos.');

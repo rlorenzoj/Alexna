@@ -15,11 +15,10 @@
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/fontawesome-all.min.css" rel="stylesheet" />
     <link href="../Scripts/mdb/css/mdb.min.css" rel="stylesheet" />
+    <link href="../Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 
     <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-<%--    <link href="../Scripts/mdb/css/addons/datatables.min.css" rel="stylesheet" />
-    <link href="../Scripts/mdb/css/addons/datatables2.min.css" rel="stylesheet" />
-    <link href="../Scripts/mdb/css/addons/datatables-select2.min.css" rel="stylesheet" />--%>
+    <link href="../Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
 
     <!-- Main css -->
     <link href="../Styles/Principal.css" rel="stylesheet" />
@@ -31,16 +30,26 @@
     <script src="../Scripts/moment-with-locales.min.js"></script>
     <script src="../Scripts/jquery-ui-1.12.1.min.js"></script>
     <script src="../Scripts/mdb/js/mdb.min.js"></script>
-
+    
     <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-<%--    <link href="../Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <script src="../Scripts/mdb/js/addons/datatables2.min.js"></script>
-    <script src="../Scripts/mdb/js/addons/datatables-select2.min.js"></script>--%>
+    <script src="../Scripts/DataTables/dataTables.buttons.min.js"></script>
+    <script src="../Scripts/DataTables/Botones/jszip.min.js"></script>
+    <script src="../Scripts/DataTables/Botones/pdfmake.min.js"></script>
+    <script src="../Scripts/DataTables/Botones/vfs_fonts.js"></script>
+    <script src="../Scripts/DataTables/buttons.html5.min.js"></script>
+    <script src="../Scripts/DataTables/buttons.print.min.js"></script>
+    <script src="../Scripts/DataTables/buttons.html5.min.js"></script>
 
     <script src="../Js/Extend.js"></script>
     <script src="../Framework/Dolf.js"></script>
     <script src="../Idiomas/Literales.js"></script>
 
+
+    <link href="../Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="../Content/DataTables/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+    <script src="../Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="../Scripts/DataTables/dataTables.responsive.min.js"></script>
+    <script src="../Scripts/DataTables/responsive.bootstrap4.min.js"></script>
 
     <title>ALEXNA</title>
 
@@ -65,16 +74,16 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="inicio.aspx">Inicio</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="alumnos">
                         <a class="nav-link" href="#">Alumnos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profesores</a>
+                        <a class="nav-link" href="#" id="profesores">Profesores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clases</a>
+                        <a class="nav-link" href="#" id="clases">Clases</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="tablasAuxiliares">
                         <a class="nav-link dropdown-toggle" id="tablasAuxiliaresDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tablas auxiliares</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="tablasAuxiliaresDropdown">
                             <a class="dropdown-item" href="Festivos.aspx">Festivos</a>

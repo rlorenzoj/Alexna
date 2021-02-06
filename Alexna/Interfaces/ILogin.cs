@@ -6,6 +6,6 @@ namespace Alexna.Interfaces
     interface ILogin
     {
         [OperationContract]
-        bool DoLogin(string usuario, string contrasena);
+        Alexna.Datos.Usuarios DoLogin(string usuario, string contrasena);
     }
 }

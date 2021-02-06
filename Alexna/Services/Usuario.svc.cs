@@ -5,9 +5,9 @@ namespace Alexna.Services
 {
     public class Usuario : IUsuario
     {
-        string IUsuario.GetUserInfo()
+        Alexna.Datos.Usuarios IUsuario.GetUserInfo()
         {
-            return HttpContext.Current.Session["usuario"] != null ? HttpContext.Current.Session["usuario"].ToString() : null;
+            return HttpContext.Current.Session["usuario"] != null ? (Alexna.Datos.Usuarios)HttpContext.Current.Session["usuario"] : null;
         }
     }
 }

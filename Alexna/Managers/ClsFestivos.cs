@@ -42,18 +42,31 @@ namespace Alexna.Managers
 
         public static Festivos NewFestivo(Festivos festivo)
         {
-            var newRecord = new Festivos() { Festivo_Fecha = festivo.Festivo_Fecha, Festivo_Descripcion = festivo.Festivo_Descripcion };
-            db.Festivos.InsertOnSubmit(newRecord);
-            db.SubmitChanges();
-            return newRecord;
+            if (!IsFestivo(festivo.Festivo_Fecha))
+            {
+                var newRecord = new Festivos() { Festivo_Fecha = festivo.Festivo_Fecha, Festivo_Descripcion = festivo.Festivo_Descripcion };
+                db.Festivos.InsertOnSubmit(newRecord);
+                db.SubmitChanges();
+                return newRecord;
+            }
+            else
+            {
+                throw new Exception($"El festivo {festivo.Festivo_Fecha.ToString("dd-MM-yyyy")} ya está dado de alta en la base de datos");
+            }
         }
 
         public static Festivos ModifyFestivo(Festivos festivo)
         {
-            var record = GetFestivo(festivo.Festivo_Fecha);
-            record.Festivo_Descripcion = festivo.Festivo_Descripcion;
-            db.SubmitChanges();
-            return record;
+            if (IsFestivo(festivo.Festivo_Fecha))
+            {
+                var record = GetFestivo(festivo.Festivo_Fecha);
+                record.Festivo_Descripcion = festivo.Festivo_Descripcion;
+                db.SubmitChanges();
+                return record;
+            } else
+            {
+                throw new Exception($"El festivo {festivo.Festivo_Fecha.ToString("dd-mm-yyyy")} no existe en la base de datos.");
+            }
         }
     }
 }

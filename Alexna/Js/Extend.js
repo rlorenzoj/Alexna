@@ -33,6 +33,15 @@ Date.prototype.toFechaDate = function () {
     }
 }
 
+Date.prototype.toFechaAnoMesDia = function () {
+    var fecha = this;
+    if (fecha) {
+        return fecha.getFullYear() + (fecha.getMonth() + 1).pad(2) + fecha.getDate().pad(2);
+    } else {
+        return null;
+    }
+}
+
 Date.prototype.ultimoDiaMes = function () {
     if (this) {
         var fecha = new Date(this);

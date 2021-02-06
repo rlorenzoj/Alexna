@@ -2,10 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="alexna">
   <DataContextMoniker Name="/alexnaDataContext" />
   <nestedChildShapes>
-    <classShape Id="efa294b9-a069-4286-9106-db6e7ad556fe" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
+    <classShape Id="efa294b9-a069-4286-9106-db6e7ad556fe" absoluteBounds="5.375, 0.625, 2, 1.1939925130208333">
       <DataClassMoniker Name="/alexnaDataContext/Festivos" />
       <nestedChildShapes>
-        <elementListCompartment Id="66f9ad9c-8506-4534-97d1-052d6f7e673c" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="66f9ad9c-8506-4534-97d1-052d6f7e673c" absoluteBounds="5.3900000000000006, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26f6ca88-12a0-4796-88d1-322862d417f0" absoluteBounds="0.5, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/alexnaDataContext/Usuarios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd62c8c7-e128-4219-927f-dd3ae3ee5a3a" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

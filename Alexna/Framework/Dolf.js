@@ -52,6 +52,29 @@
         }
     })();
 
+    const mSesion = (function () {
+        function getUsuario() {
+            return pGet('usuario');
+        }
+
+        function pGet(k) {
+            return sessionStorage.getItem(k);
+        }
+
+        function pSet(k, v) {
+            sessionStorage.setItem(k, v);
+        }
+
+        function setUsuario(usuario) {
+            pSet('usuario', usuario);
+        }
+
+        return {
+            getUsuario: getUsuario,
+            setUsuario: setUsuario
+        }
+    })();
+
     const mVentana = (function () {
         function DangerModal(title, message, callback) {
             if (typeof callback !== 'undefined') {
@@ -377,6 +400,7 @@
         AutorVersion: function () { return AutorVersion; },
         Carga: mCarga,
         FechaVersion: function () { return FechaVersion; },
+        Sesion: mSesion,
         Ventana: mVentana,
         Version: function () { return Version; }
     }

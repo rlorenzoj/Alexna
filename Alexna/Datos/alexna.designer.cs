@@ -33,6 +33,9 @@ namespace Alexna.Datos
     partial void InsertFestivos(Festivos instance);
     partial void UpdateFestivos(Festivos instance);
     partial void DeleteFestivos(Festivos instance);
+    partial void InsertUsuarios(Usuarios instance);
+    partial void UpdateUsuarios(Usuarios instance);
+    partial void DeleteUsuarios(Usuarios instance);
     #endregion
 		
 		public alexnaDataContext() : 
@@ -70,6 +73,14 @@ namespace Alexna.Datos
 			get
 			{
 				return this.GetTable<Festivos>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Usuarios> Usuarios
+		{
+			get
+			{
+				return this.GetTable<Usuarios>();
 			}
 		}
 	}
@@ -135,6 +146,212 @@ namespace Alexna.Datos
 					this._Festivo_Descripcion = value;
 					this.SendPropertyChanged("Festivo_Descripcion");
 					this.OnFestivo_DescripcionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuarios")]
+	public partial class Usuarios : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _usuario;
+		
+		private string _password;
+		
+		private bool _administrador;
+		
+		private bool _profesor;
+		
+		private bool _alumno;
+		
+		private bool _mantenimiento;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnusuarioChanging(string value);
+    partial void OnusuarioChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnadministradorChanging(bool value);
+    partial void OnadministradorChanged();
+    partial void OnprofesorChanging(bool value);
+    partial void OnprofesorChanged();
+    partial void OnalumnoChanging(bool value);
+    partial void OnalumnoChanged();
+    partial void OnmantenimientoChanging(bool value);
+    partial void OnmantenimientoChanged();
+    #endregion
+		
+		public Usuarios()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
+		public string usuario
+		{
+			get
+			{
+				return this._usuario;
+			}
+			set
+			{
+				if ((this._usuario != value))
+				{
+					this.OnusuarioChanging(value);
+					this.SendPropertyChanging();
+					this._usuario = value;
+					this.SendPropertyChanged("usuario");
+					this.OnusuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_administrador", DbType="Bit NOT NULL")]
+		public bool administrador
+		{
+			get
+			{
+				return this._administrador;
+			}
+			set
+			{
+				if ((this._administrador != value))
+				{
+					this.OnadministradorChanging(value);
+					this.SendPropertyChanging();
+					this._administrador = value;
+					this.SendPropertyChanged("administrador");
+					this.OnadministradorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_profesor", DbType="Bit NOT NULL")]
+		public bool profesor
+		{
+			get
+			{
+				return this._profesor;
+			}
+			set
+			{
+				if ((this._profesor != value))
+				{
+					this.OnprofesorChanging(value);
+					this.SendPropertyChanging();
+					this._profesor = value;
+					this.SendPropertyChanged("profesor");
+					this.OnprofesorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_alumno", DbType="Bit NOT NULL")]
+		public bool alumno
+		{
+			get
+			{
+				return this._alumno;
+			}
+			set
+			{
+				if ((this._alumno != value))
+				{
+					this.OnalumnoChanging(value);
+					this.SendPropertyChanging();
+					this._alumno = value;
+					this.SendPropertyChanged("alumno");
+					this.OnalumnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mantenimiento", DbType="Bit NOT NULL")]
+		public bool mantenimiento
+		{
+			get
+			{
+				return this._mantenimiento;
+			}
+			set
+			{
+				if ((this._mantenimiento != value))
+				{
+					this.OnmantenimientoChanging(value);
+					this.SendPropertyChanging();
+					this._mantenimiento = value;
+					this.SendPropertyChanged("mantenimiento");
+					this.OnmantenimientoChanged();
 				}
 			}
 		}

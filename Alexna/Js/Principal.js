@@ -8,8 +8,20 @@
             const param = {};
             const async = true;
             const ok = function (data) {
-                if (typeof data !== 'undefined') {
-                    // OK.
+                if (data) {
+                    // Configuramos el menú
+                    if (!data.alumno) {
+                        $('#alumnos').remove();
+                    }
+                    if (!data.profesor) {
+                        $('#profesores').remove();
+                    }
+                    if (!data.alumno && !data.profesor && !data.administrador) {
+                        $('#clases').remove();
+                    }
+                    if (!data.mantenimiento && !data.administrador) {
+                        $('#tablasAuxiliares').remove();
+                    }
                 } else {
                     // No user data.
                     window.location = 'login.html';
