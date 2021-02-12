@@ -1,0 +1,45 @@
+﻿<div class="modal fade" id="modalCursos" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mantenimiento de cursos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="modalCursos_id" class="col-form-label">Id:</label>
+                    <input type="text" class="form-control" id="modalCursos_id" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label for="modalCursos_nombre" class="col-form-label">Nombre:</label>
+                    <input type="date" class="form-control" id="modalCursos_nombre" />
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="modalCursos_activo">
+                        <label class="custom-control-label" for="modalCursos_activo">Activo</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modalCursos_fechaInicio" class="col-form-label">Fecha inicio:</label>
+                    <input type="text" class="form-control" id="modalCursos_fechaInicio" />
+                </div>
+                <div class="form-group">
+                    <label for="modalCursos_fechaFin" class="col-form-label">Fecha fin:</label>
+                    <input type="text" class="form-control" id="modalCursos_fechaFin" />
+                </div>
+                <div class="form-group">
+                    <label for="modalCursos_observaciones" class="col-form-label">Observaciones</label>
+                    <textarea class="form-control" id="modalCursos_observaciones"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light btn-sm" data-dismiss="modal" id="modalCursos_Cancelar">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="modalCursos_Aceptar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/Modales/modalCursos.js"></script>

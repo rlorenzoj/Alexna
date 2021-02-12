@@ -17,7 +17,6 @@
     <link href="../Scripts/mdb/css/mdb.min.css" rel="stylesheet" />
     <link href="../Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 
-    <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="../Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
 
     <!-- Main css -->
@@ -86,8 +85,9 @@
                     <li class="nav-item dropdown" id="tablasAuxiliares">
                         <a class="nav-link dropdown-toggle" id="tablasAuxiliaresDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tablas auxiliares</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="tablasAuxiliaresDropdown">
+                            <a class="dropdown-item" href="Asignaturas.aspx">Asignaturas</a>
+                            <a class="dropdown-item" href="Cursos.aspx">Cursos</a>
                             <a class="dropdown-item" href="Festivos.aspx">Festivos</a>
-                            <a class="dropdown-item" href="InformesClases.aspx">Informes</a>
                         </div>
                     </li>
                     <li class="nav-item">

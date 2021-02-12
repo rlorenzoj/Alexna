@@ -36,6 +36,12 @@ namespace Alexna.Datos
     partial void InsertUsuarios(Usuarios instance);
     partial void UpdateUsuarios(Usuarios instance);
     partial void DeleteUsuarios(Usuarios instance);
+    partial void InsertCursos(Cursos instance);
+    partial void UpdateCursos(Cursos instance);
+    partial void DeleteCursos(Cursos instance);
+    partial void InsertAsignaturas(Asignaturas instance);
+    partial void UpdateAsignaturas(Asignaturas instance);
+    partial void DeleteAsignaturas(Asignaturas instance);
     #endregion
 		
 		public alexnaDataContext() : 
@@ -81,6 +87,22 @@ namespace Alexna.Datos
 			get
 			{
 				return this.GetTable<Usuarios>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Cursos> Cursos
+		{
+			get
+			{
+				return this.GetTable<Cursos>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Asignaturas> Asignaturas
+		{
+			get
+			{
+				return this.GetTable<Asignaturas>();
 			}
 		}
 	}
@@ -352,6 +374,370 @@ namespace Alexna.Datos
 					this._mantenimiento = value;
 					this.SendPropertyChanged("mantenimiento");
 					this.OnmantenimientoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cursos")]
+	public partial class Cursos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Curso_Id;
+		
+		private string _Curso_Nombre;
+		
+		private bool _Curso_Activo;
+		
+		private System.DateTime _Curso_Fecha_Inicio;
+		
+		private System.DateTime _Curso_Fecha_Fin;
+		
+		private string _Curso_Observaciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCurso_IdChanging(int value);
+    partial void OnCurso_IdChanged();
+    partial void OnCurso_NombreChanging(string value);
+    partial void OnCurso_NombreChanged();
+    partial void OnCurso_ActivoChanging(bool value);
+    partial void OnCurso_ActivoChanged();
+    partial void OnCurso_Fecha_InicioChanging(System.DateTime value);
+    partial void OnCurso_Fecha_InicioChanged();
+    partial void OnCurso_Fecha_FinChanging(System.DateTime value);
+    partial void OnCurso_Fecha_FinChanged();
+    partial void OnCurso_ObservacionesChanging(string value);
+    partial void OnCurso_ObservacionesChanged();
+    #endregion
+		
+		public Cursos()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Curso_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Curso_Id
+		{
+			get
+			{
+				return this._Curso_Id;
+			}
+			set
+			{
+				if ((this._Curso_Id != value))
+				{
+					this.OnCurso_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Curso_Id = value;
+					this.SendPropertyChanged("Curso_Id");
+					this.OnCurso_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Curso_Nombre", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string Curso_Nombre
+		{
+			get
+			{
+				return this._Curso_Nombre;
+			}
+			set
+			{
+				if ((this._Curso_Nombre != value))
+				{
+					this.OnCurso_NombreChanging(value);
+					this.SendPropertyChanging();
+					this._Curso_Nombre = value;
+					this.SendPropertyChanged("Curso_Nombre");
+					this.OnCurso_NombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Curso_Activo", DbType="Bit NOT NULL")]
+		public bool Curso_Activo
+		{
+			get
+			{
+				return this._Curso_Activo;
+			}
+			set
+			{
+				if ((this._Curso_Activo != value))
+				{
+					this.OnCurso_ActivoChanging(value);
+					this.SendPropertyChanging();
+					this._Curso_Activo = value;
+					this.SendPropertyChanged("Curso_Activo");
+					this.OnCurso_ActivoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Curso_Fecha_Inicio", DbType="Date NOT NULL")]
+		public System.DateTime Curso_Fecha_Inicio
+		{
+			get
+			{
+				return this._Curso_Fecha_Inicio;
+			}
+			set
+			{
+				if ((this._Curso_Fecha_Inicio != value))
+				{
+					this.OnCurso_Fecha_InicioChanging(value);
+					this.SendPropertyChanging();
+					this._Curso_Fecha_Inicio = value;
+					this.SendPropertyChanged("Curso_Fecha_Inicio");
+					this.OnCurso_Fecha_InicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Curso_Fecha_Fin", DbType="Date NOT NULL")]
+		public System.DateTime Curso_Fecha_Fin
+		{
+			get
+			{
+				return this._Curso_Fecha_Fin;
+			}
+			set
+			{
+				if ((this._Curso_Fecha_Fin != value))
+				{
+					this.OnCurso_Fecha_FinChanging(value);
+					this.SendPropertyChanging();
+					this._Curso_Fecha_Fin = value;
+					this.SendPropertyChanged("Curso_Fecha_Fin");
+					this.OnCurso_Fecha_FinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Curso_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Curso_Observaciones
+		{
+			get
+			{
+				return this._Curso_Observaciones;
+			}
+			set
+			{
+				if ((this._Curso_Observaciones != value))
+				{
+					this.OnCurso_ObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Curso_Observaciones = value;
+					this.SendPropertyChanged("Curso_Observaciones");
+					this.OnCurso_ObservacionesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Asignaturas")]
+	public partial class Asignaturas : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Asignatura_Id;
+		
+		private string _Asignatura_Nombre;
+		
+		private System.DateTime _Asignatura_Fecha_Inicio;
+		
+		private System.Nullable<System.DateTime> _Asignatura_Fecha_Fin;
+		
+		private bool _Asignatura_Activa;
+		
+		private string _Asignatura_Observaciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAsignatura_IdChanging(int value);
+    partial void OnAsignatura_IdChanged();
+    partial void OnAsignatura_NombreChanging(string value);
+    partial void OnAsignatura_NombreChanged();
+    partial void OnAsignatura_Fecha_InicioChanging(System.DateTime value);
+    partial void OnAsignatura_Fecha_InicioChanged();
+    partial void OnAsignatura_Fecha_FinChanging(System.Nullable<System.DateTime> value);
+    partial void OnAsignatura_Fecha_FinChanged();
+    partial void OnAsignatura_ActivaChanging(bool value);
+    partial void OnAsignatura_ActivaChanged();
+    partial void OnAsignatura_ObservacionesChanging(string value);
+    partial void OnAsignatura_ObservacionesChanged();
+    #endregion
+		
+		public Asignaturas()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asignatura_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Asignatura_Id
+		{
+			get
+			{
+				return this._Asignatura_Id;
+			}
+			set
+			{
+				if ((this._Asignatura_Id != value))
+				{
+					this.OnAsignatura_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Asignatura_Id = value;
+					this.SendPropertyChanged("Asignatura_Id");
+					this.OnAsignatura_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asignatura_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Asignatura_Nombre
+		{
+			get
+			{
+				return this._Asignatura_Nombre;
+			}
+			set
+			{
+				if ((this._Asignatura_Nombre != value))
+				{
+					this.OnAsignatura_NombreChanging(value);
+					this.SendPropertyChanging();
+					this._Asignatura_Nombre = value;
+					this.SendPropertyChanged("Asignatura_Nombre");
+					this.OnAsignatura_NombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asignatura_Fecha_Inicio", DbType="Date NOT NULL")]
+		public System.DateTime Asignatura_Fecha_Inicio
+		{
+			get
+			{
+				return this._Asignatura_Fecha_Inicio;
+			}
+			set
+			{
+				if ((this._Asignatura_Fecha_Inicio != value))
+				{
+					this.OnAsignatura_Fecha_InicioChanging(value);
+					this.SendPropertyChanging();
+					this._Asignatura_Fecha_Inicio = value;
+					this.SendPropertyChanged("Asignatura_Fecha_Inicio");
+					this.OnAsignatura_Fecha_InicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asignatura_Fecha_Fin", DbType="Date")]
+		public System.Nullable<System.DateTime> Asignatura_Fecha_Fin
+		{
+			get
+			{
+				return this._Asignatura_Fecha_Fin;
+			}
+			set
+			{
+				if ((this._Asignatura_Fecha_Fin != value))
+				{
+					this.OnAsignatura_Fecha_FinChanging(value);
+					this.SendPropertyChanging();
+					this._Asignatura_Fecha_Fin = value;
+					this.SendPropertyChanged("Asignatura_Fecha_Fin");
+					this.OnAsignatura_Fecha_FinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asignatura_Activa", DbType="Bit NOT NULL")]
+		public bool Asignatura_Activa
+		{
+			get
+			{
+				return this._Asignatura_Activa;
+			}
+			set
+			{
+				if ((this._Asignatura_Activa != value))
+				{
+					this.OnAsignatura_ActivaChanging(value);
+					this.SendPropertyChanging();
+					this._Asignatura_Activa = value;
+					this.SendPropertyChanged("Asignatura_Activa");
+					this.OnAsignatura_ActivaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asignatura_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Asignatura_Observaciones
+		{
+			get
+			{
+				return this._Asignatura_Observaciones;
+			}
+			set
+			{
+				if ((this._Asignatura_Observaciones != value))
+				{
+					this.OnAsignatura_ObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Asignatura_Observaciones = value;
+					this.SendPropertyChanged("Asignatura_Observaciones");
+					this.OnAsignatura_ObservacionesChanged();
 				}
 			}
 		}

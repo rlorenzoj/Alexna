@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Alexna.Services.SvcCursos" CodeBehind="SvcCursos.svc.cs" %>

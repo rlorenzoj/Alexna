@@ -1,6 +1,37 @@
-﻿body {
-}
-
+﻿
 .pointer {
     cursor: pointer;
+}
+
+.modal-header {
+    padding: 9px 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #0480be;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+    .modal-header h5 {
+        color: white;
+    }
+
+h4.titulo {
+    padding: 9px 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #ff6a00;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+}
+
+table.table td {
+    padding-bottom: 3px;
+    padding-top: 3px;
 }
