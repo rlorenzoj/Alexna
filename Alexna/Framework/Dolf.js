@@ -6,6 +6,21 @@
     const Version = '1.0.0';
 
     const mCarga = (function () {
+        function DameBase64(file) {
+            const retorno = $.Deferred();
+
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                retorno.resolve(reader.result);
+            };
+            reader.onerror = function (error) {
+                retorno.reject(error);
+            };
+
+            return retorno;
+        }
+
         function EnviarDatos(url, type, params, async, callback_ok, callback_ko) {
             async = typeof async !== 'undefined' ? async : true;
             type = type || 'POST';
@@ -48,7 +63,8 @@
         }
 
         return {
-            EnviarDatos: EnviarDatos
+            EnviarDatos: EnviarDatos,
+            DameBase64: DameBase64
         }
     })();
 

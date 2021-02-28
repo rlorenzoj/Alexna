@@ -1,0 +1,39 @@
+﻿<div class="modal fade" id="modalVacaciones" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mantenimiento de vacaciones</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="modalVacaciones_id" class="col-form-label">Id:</label>
+                    <input type="text" class="form-control" id="modalVacaciones_id" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label for="modalVacaciones_nombre" class="col-form-label">Nombre:</label>
+                    <input type="date" class="form-control" id="modalVacaciones_nombre" />
+                </div>
+                <div class="form-group">
+                    <label for="modalVacaciones_fechaInicio" class="col-form-label">Fecha inicio:</label>
+                    <input type="text" class="form-control" id="modalVacaciones_fechaInicio" />
+                </div>
+                <div class="form-group">
+                    <label for="modalVacaciones_fechaFin" class="col-form-label">Fecha fin:</label>
+                    <input type="text" class="form-control" id="modalVacaciones_fechaFin" />
+                </div>
+                <div class="form-group">
+                    <label for="modalVacaciones_observaciones" class="col-form-label">Observaciones:</label>
+                    <textarea class="form-control" id="modalVacaciones_observaciones"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light btn-sm" data-dismiss="modal" id="modalVacaciones_Cancelar">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="modalVacaciones_Aceptar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/Modales/modalVacaciones.js"></script>

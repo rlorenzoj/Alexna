@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="alexna">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="alexna">
   <DataContextMoniker Name="/alexnaDataContext" />
   <nestedChildShapes>
     <classShape Id="efa294b9-a069-4286-9106-db6e7ad556fe" absoluteBounds="4.75, 0.5, 2, 1.1939925130208333">
@@ -24,6 +24,18 @@
       <DataClassMoniker Name="/alexnaDataContext/Asignaturas" />
       <nestedChildShapes>
         <elementListCompartment Id="92a61966-96b8-4eb1-b589-80cec58caba3" absoluteBounds="6.89, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4cba2411-93ca-4024-9dcd-5f5bbe35934e" absoluteBounds="9, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/alexnaDataContext/Vacaciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50936db7-d420-4bca-a20d-baecb704fb0c" absoluteBounds="9.015, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6f32262-aba2-426a-8553-77bb5cf9d218" absoluteBounds="0.5, 2.875, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/alexnaDataContext/Personas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c988979-9c09-4bcf-b57d-d7c8efb0372f" absoluteBounds="0.51499999999999968, 3.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

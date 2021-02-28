@@ -37,4 +37,28 @@
       <Column Name="Asignatura_Observaciones" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
+  <Table Name="dbo.Vacaciones" Member="Vacaciones">
+    <Type Name="Vacaciones">
+      <Column Name="Vacacion_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vacacion_Nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Vacacion_Fecha_Inicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Vacacion_Fecha_Fin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Vacacion_Observaciones" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Personas" Member="Personas">
+    <Type Name="Personas">
+      <Column Name="Persona_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Persona_Identificacion_Legal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Persona_Foto" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Persona_Nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona_Apellido_1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona_Apellido_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Persona_Alias" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Persona_Sexo" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona_Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Persona_Fecha_Muerte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Persona_Observaciones" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
 </Database>

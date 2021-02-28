@@ -1,0 +1,70 @@
+﻿<div class="modal fade" id="modalPersonas" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mantenimiento de personas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="modalPersonas_id" class="col-form-label">Id:</label>
+                    <input type="text" class="form-control" id="modalPersonas_id" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_dni" class="col-form-label">Identificación legal:</label>
+                    <input type="date" class="form-control" id="modalPersonas_dni" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_foto" class="col-form-label">Fotografía:</label>
+                    <div class="custom-control custom-switch" id="modalPersonas_mantenerFotoGrupo">
+                        <input type="checkbox" class="custom-control-input" id="modalPersonas_mantenerFoto">
+                        <label class="custom-control-label" for="modalPersonas_mantenerFoto">Mantener foto</label>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="modalPersonas_foto" lang="es" accept="image/jpeg, image/gif, image/png" />
+                        <label class="custom-file-label" for="modalPersonas_foto">Seleccione fichero</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_nombre" class="col-form-label">Nombre:</label>
+                    <input type="date" class="form-control" id="modalPersonas_nombre" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_apellido1" class="col-form-label">Primer apellido:</label>
+                    <input type="date" class="form-control" id="modalPersonas_apellido1" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_apellido2" class="col-form-label">Segundo apellido:</label>
+                    <input type="date" class="form-control" id="modalPersonas_apellido2" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_alias" class="col-form-label">Alias:</label>
+                    <input type="date" class="form-control" id="modalPersonas_alias" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_sexo" class="col-form-label">Sexo:</label>
+                    <input type="date" class="form-control" id="modalPersonas_sexo" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_fechaNacimiento" class="col-form-label">Fecha nacimiento:</label>
+                    <input type="text" class="form-control" id="modalPersonas_fechaNacimiento" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_fechaMuerte" class="col-form-label">Fecha muerte:</label>
+                    <input type="text" class="form-control" id="modalPersonas_fechaMuerte" />
+                </div>
+                <div class="form-group">
+                    <label for="modalPersonas_observaciones" class="col-form-label">Observaciones:</label>
+                    <textarea class="form-control" id="modalPersonas_observaciones"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light btn-sm" data-dismiss="modal" id="modalPersonas_Cancelar">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="modalPersonas_Aceptar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/Modales/modalPersonas.js"></script>

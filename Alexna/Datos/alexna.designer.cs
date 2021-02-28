@@ -42,6 +42,12 @@ namespace Alexna.Datos
     partial void InsertAsignaturas(Asignaturas instance);
     partial void UpdateAsignaturas(Asignaturas instance);
     partial void DeleteAsignaturas(Asignaturas instance);
+    partial void InsertVacaciones(Vacaciones instance);
+    partial void UpdateVacaciones(Vacaciones instance);
+    partial void DeleteVacaciones(Vacaciones instance);
+    partial void InsertPersonas(Personas instance);
+    partial void UpdatePersonas(Personas instance);
+    partial void DeletePersonas(Personas instance);
     #endregion
 		
 		public alexnaDataContext() : 
@@ -103,6 +109,22 @@ namespace Alexna.Datos
 			get
 			{
 				return this.GetTable<Asignaturas>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Vacaciones> Vacaciones
+		{
+			get
+			{
+				return this.GetTable<Vacaciones>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Personas> Personas
+		{
+			get
+			{
+				return this.GetTable<Personas>();
 			}
 		}
 	}
@@ -738,6 +760,466 @@ namespace Alexna.Datos
 					this._Asignatura_Observaciones = value;
 					this.SendPropertyChanged("Asignatura_Observaciones");
 					this.OnAsignatura_ObservacionesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vacaciones")]
+	public partial class Vacaciones : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Vacacion_Id;
+		
+		private string _Vacacion_Nombre;
+		
+		private System.DateTime _Vacacion_Fecha_Inicio;
+		
+		private System.DateTime _Vacacion_Fecha_Fin;
+		
+		private string _Vacacion_Observaciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnVacacion_IdChanging(int value);
+    partial void OnVacacion_IdChanged();
+    partial void OnVacacion_NombreChanging(string value);
+    partial void OnVacacion_NombreChanged();
+    partial void OnVacacion_Fecha_InicioChanging(System.DateTime value);
+    partial void OnVacacion_Fecha_InicioChanged();
+    partial void OnVacacion_Fecha_FinChanging(System.DateTime value);
+    partial void OnVacacion_Fecha_FinChanged();
+    partial void OnVacacion_ObservacionesChanging(string value);
+    partial void OnVacacion_ObservacionesChanged();
+    #endregion
+		
+		public Vacaciones()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vacacion_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Vacacion_Id
+		{
+			get
+			{
+				return this._Vacacion_Id;
+			}
+			set
+			{
+				if ((this._Vacacion_Id != value))
+				{
+					this.OnVacacion_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Vacacion_Id = value;
+					this.SendPropertyChanged("Vacacion_Id");
+					this.OnVacacion_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vacacion_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Vacacion_Nombre
+		{
+			get
+			{
+				return this._Vacacion_Nombre;
+			}
+			set
+			{
+				if ((this._Vacacion_Nombre != value))
+				{
+					this.OnVacacion_NombreChanging(value);
+					this.SendPropertyChanging();
+					this._Vacacion_Nombre = value;
+					this.SendPropertyChanged("Vacacion_Nombre");
+					this.OnVacacion_NombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vacacion_Fecha_Inicio", DbType="Date NOT NULL")]
+		public System.DateTime Vacacion_Fecha_Inicio
+		{
+			get
+			{
+				return this._Vacacion_Fecha_Inicio;
+			}
+			set
+			{
+				if ((this._Vacacion_Fecha_Inicio != value))
+				{
+					this.OnVacacion_Fecha_InicioChanging(value);
+					this.SendPropertyChanging();
+					this._Vacacion_Fecha_Inicio = value;
+					this.SendPropertyChanged("Vacacion_Fecha_Inicio");
+					this.OnVacacion_Fecha_InicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vacacion_Fecha_Fin", DbType="Date NOT NULL")]
+		public System.DateTime Vacacion_Fecha_Fin
+		{
+			get
+			{
+				return this._Vacacion_Fecha_Fin;
+			}
+			set
+			{
+				if ((this._Vacacion_Fecha_Fin != value))
+				{
+					this.OnVacacion_Fecha_FinChanging(value);
+					this.SendPropertyChanging();
+					this._Vacacion_Fecha_Fin = value;
+					this.SendPropertyChanged("Vacacion_Fecha_Fin");
+					this.OnVacacion_Fecha_FinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vacacion_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Vacacion_Observaciones
+		{
+			get
+			{
+				return this._Vacacion_Observaciones;
+			}
+			set
+			{
+				if ((this._Vacacion_Observaciones != value))
+				{
+					this.OnVacacion_ObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Vacacion_Observaciones = value;
+					this.SendPropertyChanged("Vacacion_Observaciones");
+					this.OnVacacion_ObservacionesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Personas")]
+	public partial class Personas : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Persona_Id;
+		
+		private string _Persona_Identificacion_Legal;
+		
+		private string _Persona_Foto;
+		
+		private string _Persona_Nombre;
+		
+		private string _Persona_Apellido_1;
+		
+		private string _Persona_Apellido_2;
+		
+		private string _Persona_Alias;
+		
+		private string _Persona_Sexo;
+		
+		private System.Nullable<System.DateTime> _Persona_Fecha_Nacimiento;
+		
+		private System.Nullable<System.DateTime> _Persona_Fecha_Muerte;
+		
+		private string _Persona_Observaciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPersona_IdChanging(int value);
+    partial void OnPersona_IdChanged();
+    partial void OnPersona_Identificacion_LegalChanging(string value);
+    partial void OnPersona_Identificacion_LegalChanged();
+    partial void OnPersona_FotoChanging(string value);
+    partial void OnPersona_FotoChanged();
+    partial void OnPersona_NombreChanging(string value);
+    partial void OnPersona_NombreChanged();
+    partial void OnPersona_Apellido_1Changing(string value);
+    partial void OnPersona_Apellido_1Changed();
+    partial void OnPersona_Apellido_2Changing(string value);
+    partial void OnPersona_Apellido_2Changed();
+    partial void OnPersona_AliasChanging(string value);
+    partial void OnPersona_AliasChanged();
+    partial void OnPersona_SexoChanging(string value);
+    partial void OnPersona_SexoChanged();
+    partial void OnPersona_Fecha_NacimientoChanging(System.Nullable<System.DateTime> value);
+    partial void OnPersona_Fecha_NacimientoChanged();
+    partial void OnPersona_Fecha_MuerteChanging(System.Nullable<System.DateTime> value);
+    partial void OnPersona_Fecha_MuerteChanged();
+    partial void OnPersona_ObservacionesChanging(string value);
+    partial void OnPersona_ObservacionesChanged();
+    #endregion
+		
+		public Personas()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Persona_Id
+		{
+			get
+			{
+				return this._Persona_Id;
+			}
+			set
+			{
+				if ((this._Persona_Id != value))
+				{
+					this.OnPersona_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Id = value;
+					this.SendPropertyChanged("Persona_Id");
+					this.OnPersona_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Identificacion_Legal", DbType="NVarChar(50)")]
+		public string Persona_Identificacion_Legal
+		{
+			get
+			{
+				return this._Persona_Identificacion_Legal;
+			}
+			set
+			{
+				if ((this._Persona_Identificacion_Legal != value))
+				{
+					this.OnPersona_Identificacion_LegalChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Identificacion_Legal = value;
+					this.SendPropertyChanged("Persona_Identificacion_Legal");
+					this.OnPersona_Identificacion_LegalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Foto", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Persona_Foto
+		{
+			get
+			{
+				return this._Persona_Foto;
+			}
+			set
+			{
+				if ((this._Persona_Foto != value))
+				{
+					this.OnPersona_FotoChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Foto = value;
+					this.SendPropertyChanged("Persona_Foto");
+					this.OnPersona_FotoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Persona_Nombre
+		{
+			get
+			{
+				return this._Persona_Nombre;
+			}
+			set
+			{
+				if ((this._Persona_Nombre != value))
+				{
+					this.OnPersona_NombreChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Nombre = value;
+					this.SendPropertyChanged("Persona_Nombre");
+					this.OnPersona_NombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Apellido_1", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Persona_Apellido_1
+		{
+			get
+			{
+				return this._Persona_Apellido_1;
+			}
+			set
+			{
+				if ((this._Persona_Apellido_1 != value))
+				{
+					this.OnPersona_Apellido_1Changing(value);
+					this.SendPropertyChanging();
+					this._Persona_Apellido_1 = value;
+					this.SendPropertyChanged("Persona_Apellido_1");
+					this.OnPersona_Apellido_1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Apellido_2", DbType="NVarChar(50)")]
+		public string Persona_Apellido_2
+		{
+			get
+			{
+				return this._Persona_Apellido_2;
+			}
+			set
+			{
+				if ((this._Persona_Apellido_2 != value))
+				{
+					this.OnPersona_Apellido_2Changing(value);
+					this.SendPropertyChanging();
+					this._Persona_Apellido_2 = value;
+					this.SendPropertyChanged("Persona_Apellido_2");
+					this.OnPersona_Apellido_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Alias", DbType="NVarChar(50)")]
+		public string Persona_Alias
+		{
+			get
+			{
+				return this._Persona_Alias;
+			}
+			set
+			{
+				if ((this._Persona_Alias != value))
+				{
+					this.OnPersona_AliasChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Alias = value;
+					this.SendPropertyChanged("Persona_Alias");
+					this.OnPersona_AliasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Sexo", DbType="NVarChar(1) NOT NULL", CanBeNull=false)]
+		public string Persona_Sexo
+		{
+			get
+			{
+				return this._Persona_Sexo;
+			}
+			set
+			{
+				if ((this._Persona_Sexo != value))
+				{
+					this.OnPersona_SexoChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Sexo = value;
+					this.SendPropertyChanged("Persona_Sexo");
+					this.OnPersona_SexoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Fecha_Nacimiento", DbType="Date")]
+		public System.Nullable<System.DateTime> Persona_Fecha_Nacimiento
+		{
+			get
+			{
+				return this._Persona_Fecha_Nacimiento;
+			}
+			set
+			{
+				if ((this._Persona_Fecha_Nacimiento != value))
+				{
+					this.OnPersona_Fecha_NacimientoChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Fecha_Nacimiento = value;
+					this.SendPropertyChanged("Persona_Fecha_Nacimiento");
+					this.OnPersona_Fecha_NacimientoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Fecha_Muerte", DbType="Date")]
+		public System.Nullable<System.DateTime> Persona_Fecha_Muerte
+		{
+			get
+			{
+				return this._Persona_Fecha_Muerte;
+			}
+			set
+			{
+				if ((this._Persona_Fecha_Muerte != value))
+				{
+					this.OnPersona_Fecha_MuerteChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Fecha_Muerte = value;
+					this.SendPropertyChanged("Persona_Fecha_Muerte");
+					this.OnPersona_Fecha_MuerteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Persona_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Persona_Observaciones
+		{
+			get
+			{
+				return this._Persona_Observaciones;
+			}
+			set
+			{
+				if ((this._Persona_Observaciones != value))
+				{
+					this.OnPersona_ObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Persona_Observaciones = value;
+					this.SendPropertyChanged("Persona_Observaciones");
+					this.OnPersona_ObservacionesChanged();
 				}
 			}
 		}
