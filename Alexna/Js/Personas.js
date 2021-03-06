@@ -85,7 +85,7 @@
                             //const image = new Image();
                             //image.src = data;
                             //document.body.appendChild(image);
-                            return '<img src="' + data + '" style="width: 50px; height: 50px;" />';
+                            return '<img src="' + data + '" style="width: 50px;" />';
                         } else {
                             return '';
                         }
@@ -136,30 +136,30 @@
                 {
                     extend: 'copy',
                     exportOptions: {
-                        columns: 'th:not(:last-child)'
+                        columns: 'th:not(:nth-child(3), :last-child)'
                     }
                 },
                 {
                     extend: 'csv',
                     exportOptions: {
-                        columns: 'th:not(:last-child)'
+                        columns: 'th:not(:nth-child(3), :last-child)'
                     }
                 },
                 {
                     extend: 'excel',
                     exportOptions: {
-                        columns: 'th:not(:last-child)'
+                        columns: 'th:not(:nth-child(3), :last-child)'
                     }
                 },
                 {
                     extend: 'pdf',
                     exportOptions: {
-                        columns: 'th:not(:last-child)'
+                        columns: 'th:not(:nth-child(3), :last-child)'
                     }
                 }, {
                     extend: 'print',
                     exportOptions: {
-                        columns: 'th:not(:last-child)'
+                        columns: 'th:not(:nth-child(3), :last-child)'
                     }
                 }]
         });

@@ -38,5 +38,11 @@
         <elementListCompartment Id="0c988979-9c09-4bcf-b57d-d7c8efb0372f" absoluteBounds="0.51499999999999968, 3.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="98932f23-d9ef-4a40-8872-18f4e7ab745c" absoluteBounds="2.625, 2.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/alexnaDataContext/Paises" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11c4bb16-a243-436f-8cdd-ae2906e505be" absoluteBounds="2.6399999999999997, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

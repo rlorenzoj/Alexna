@@ -48,6 +48,9 @@ namespace Alexna.Datos
     partial void InsertPersonas(Personas instance);
     partial void UpdatePersonas(Personas instance);
     partial void DeletePersonas(Personas instance);
+    partial void InsertPaises(Paises instance);
+    partial void UpdatePaises(Paises instance);
+    partial void DeletePaises(Paises instance);
     #endregion
 		
 		public alexnaDataContext() : 
@@ -125,6 +128,14 @@ namespace Alexna.Datos
 			get
 			{
 				return this.GetTable<Personas>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Paises> Paises
+		{
+			get
+			{
+				return this.GetTable<Paises>();
 			}
 		}
 	}
@@ -1220,6 +1231,116 @@ namespace Alexna.Datos
 					this._Persona_Observaciones = value;
 					this.SendPropertyChanged("Persona_Observaciones");
 					this.OnPersona_ObservacionesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Paises")]
+	public partial class Paises : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Pais_Id;
+		
+		private string _Nombre;
+		
+		private string _Observaciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPais_IdChanging(int value);
+    partial void OnPais_IdChanged();
+    partial void OnNombreChanging(string value);
+    partial void OnNombreChanged();
+    partial void OnObservacionesChanging(string value);
+    partial void OnObservacionesChanged();
+    #endregion
+		
+		public Paises()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pais_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Pais_Id
+		{
+			get
+			{
+				return this._Pais_Id;
+			}
+			set
+			{
+				if ((this._Pais_Id != value))
+				{
+					this.OnPais_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Pais_Id = value;
+					this.SendPropertyChanged("Pais_Id");
+					this.OnPais_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this.OnNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Nombre = value;
+					this.SendPropertyChanged("Nombre");
+					this.OnNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Observaciones
+		{
+			get
+			{
+				return this._Observaciones;
+			}
+			set
+			{
+				if ((this._Observaciones != value))
+				{
+					this.OnObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Observaciones = value;
+					this.SendPropertyChanged("Observaciones");
+					this.OnObservacionesChanged();
 				}
 			}
 		}
