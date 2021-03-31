@@ -35,3 +35,8 @@ table.table td {
     padding-bottom: 3px;
     padding-top: 3px;
 }
+
+.jb {
+    height: 500px !important;
+    overflow: auto;
+}

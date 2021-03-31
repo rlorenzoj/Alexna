@@ -18,6 +18,7 @@
     <link href="../Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 
     <link href="../Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="../Content/css/select2.min.css" rel="stylesheet" />
 
     <!-- Main css -->
     <link href="../Styles/Principal.css" rel="stylesheet" />
@@ -50,6 +51,8 @@
     <script src="../Scripts/DataTables/dataTables.responsive.min.js"></script>
     <script src="../Scripts/DataTables/responsive.bootstrap4.min.js"></script>
 
+    <script src="../Scripts/select2.min.js"></script>
+
     <title>ALEXNA</title>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -79,17 +82,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="profesores">Profesores</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="clases">Clases</a>
+                    <li class="nav-item dropdown" id="clases">
+                        <a class="nav-link dropdown-toggle" id="clasesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clases</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="clasesDropdown">
+                            <a class="dropdown-item" href="Grupos.aspx">Grupos</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown" id="tablasAuxiliares">
                         <a class="nav-link dropdown-toggle" id="tablasAuxiliaresDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tablas auxiliares</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="tablasAuxiliaresDropdown">
                             <a class="dropdown-item" href="Asignaturas.aspx">Asignaturas</a>
+                            <a class="dropdown-item" href="Aulas.aspx">Aulas</a>
                             <a class="dropdown-item" href="Cursos.aspx">Cursos</a>
                             <a class="dropdown-item" href="Festivos.aspx">Festivos</a>
                             <a class="dropdown-item" href="Paises.aspx">Pa&iacute;ses</a>
                             <a class="dropdown-item" href="Personas.aspx">Personas</a>
+                            <a class="dropdown-item" href="Regiones.aspx">Regiones</a>
                             <a class="dropdown-item" href="Vacaciones.aspx">Vacaciones</a>
                         </div>
                     </li>

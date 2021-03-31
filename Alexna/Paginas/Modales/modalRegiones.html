@@ -1,0 +1,35 @@
+﻿<div class="modal fade" id="modalRegiones" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mantenimiento de Regiones</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="modalRegiones_id" class="col-form-label">Id:</label>
+                    <input type="text" class="form-control" id="modalRegiones_id" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label for="modalRegiones_paisId" class="col-form-label">País:</label>
+                    <select class="js-example-basic-single" style="width: 100%;" id="modalRegiones_paisId"></select>
+                </div>
+                <div class="form-group">
+                    <label for="modalRegiones_nombre" class="col-form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="modalRegiones_nombre" />
+                </div>
+                <div class="form-group">
+                    <label for="modalRegiones_observaciones" class="col-form-label">Observaciones</label>
+                    <textarea class="form-control" id="modalRegiones_observaciones"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light btn-sm" data-dismiss="modal" id="modalRegiones_Cancelar">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="modalRegiones_Aceptar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/Modales/modalRegiones.js"></script>

@@ -1,0 +1,37 @@
+﻿<div class="modal fade" id="modalAulas" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mantenimiento de aulas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="modalAulas_id" class="col-form-label">Id:</label>
+                    <input type="text" class="form-control" id="modalAulas_id" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label for="modalAulas_nombre" class="col-form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="modalAulas_nombre" />
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="modalAulas_activa">
+                        <label class="custom-control-label" for="modalAulas_activa">Activo</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modalAulas_observaciones" class="col-form-label">Observaciones</label>
+                    <textarea class="form-control" id="modalAulas_observaciones"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light btn-sm" data-dismiss="modal" id="modalAulas_Cancelar">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="modalAulas_Aceptar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/Modales/modalAulas.js"></script>

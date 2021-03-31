@@ -311,20 +311,27 @@
     <Content Include="Images\icons\map-marker.png" />
     <Content Include="Images\SmallLogo.png" />
     <Content Include="Js\Asignaturas.js" />
+    <Content Include="Js\Aulas.js" />
     <Content Include="Js\Cursos.js" />
     <Content Include="Js\Extend.js" />
     <Content Include="Js\Festivos.js" />
     <Content Include="Js\Inicio.js" />
     <Content Include="Js\Login.js" />
     <Content Include="Js\Modales\modalAsignaturas.js" />
+    <Content Include="Js\Modales\modalAulas.js" />
     <Content Include="Js\Modales\modalCursos.js" />
     <Content Include="Js\Modales\modalFestivos.js" />
+    <Content Include="Js\Modales\modalPaises.js" />
     <Content Include="Js\Modales\modalPersonas.js" />
+    <Content Include="Js\Modales\modalRegiones.js" />
     <Content Include="Js\Modales\modalVacaciones.js" />
+    <Content Include="Js\Paises.js" />
     <Content Include="Js\Personas.js" />
     <Content Include="Js\Principal.js" />
+    <Content Include="Js\Regiones.js" />
     <Content Include="Js\Vacaciones.js" />
     <Content Include="Paginas\Asignaturas.aspx" />
+    <Content Include="Paginas\Aulas.aspx" />
     <Content Include="Paginas\Cursos.aspx" />
     <Content Include="Paginas\Festivos.aspx" />
     <Content Include="Paginas\inicio.aspx" />
@@ -345,11 +352,16 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
     <Content Include="Paginas\Modales\modalAsignaturas.html" />
+    <Content Include="Paginas\Modales\modalAulas.html" />
     <Content Include="Paginas\Modales\modalCursos.html" />
     <Content Include="Paginas\Modales\modalFestivos.html" />
+    <Content Include="Paginas\Modales\ModalPaises.html" />
     <Content Include="Paginas\Modales\modalPersonas.html" />
+    <Content Include="Paginas\Modales\modalRegiones.html" />
     <Content Include="Paginas\Modales\modalVacaciones.html" />
+    <Content Include="Paginas\Paises.aspx" />
     <Content Include="Paginas\Personas.aspx" />
+    <Content Include="Paginas\Regiones.aspx" />
     <Content Include="Paginas\Vacaciones.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -680,9 +692,12 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Services\Login.svc" />
     <Content Include="Services\SvcAsignaturas.svc" />
+    <Content Include="Services\SvcAulas.svc" />
     <Content Include="Services\SvcCursos.svc" />
     <Content Include="Services\SvcFestivos.svc" />
+    <Content Include="Services\SvcPaises.svc" />
     <Content Include="Services\SvcPersonas.svc" />
+    <Content Include="Services\SvcRegiones.svc" />
     <Content Include="Services\SvcVacaciones.svc" />
     <Content Include="Services\Usuario.svc" />
     <Content Include="Styles\Principal.css" />
@@ -710,16 +725,23 @@
       <DependentUpon>alexna.dbml</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IAsignatura.cs" />
+    <Compile Include="Interfaces\IAula.cs" />
     <Compile Include="Interfaces\ICurso.cs" />
     <Compile Include="Interfaces\IFestivo.cs" />
     <Compile Include="Interfaces\ILogin.cs" />
+    <Compile Include="Interfaces\IPais.cs" />
     <Compile Include="Interfaces\IPersona.cs" />
+    <Compile Include="Interfaces\IRegion.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
     <Compile Include="Interfaces\IVacacion.cs" />
+    <Compile Include="Managers\AbsGestores.cs" />
     <Compile Include="Managers\ClsAsignaturas.cs" />
+    <Compile Include="Managers\ClsAulas.cs" />
     <Compile Include="Managers\ClsCursos.cs" />
     <Compile Include="Managers\ClsFestivos.cs" />
+    <Compile Include="Managers\ClsPaises.cs" />
     <Compile Include="Managers\ClsPersonas.cs" />
+    <Compile Include="Managers\ClsRegiones.cs" />
     <Compile Include="Managers\ClsVacaciones.cs" />
     <Compile Include="Managers\Login.cs" />
     <Compile Include="Paginas\Asignaturas.aspx.cs">
@@ -728,6 +750,13 @@
     </Compile>
     <Compile Include="Paginas\Asignaturas.aspx.designer.cs">
       <DependentUpon>Asignaturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Aulas.aspx.cs">
+      <DependentUpon>Aulas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Aulas.aspx.designer.cs">
+      <DependentUpon>Aulas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Cursos.aspx.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
@@ -750,6 +779,13 @@
     <Compile Include="Paginas\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Paises.aspx.cs">
+      <DependentUpon>Paises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Paises.aspx.designer.cs">
+      <DependentUpon>Paises.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Personas.aspx.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -763,6 +799,13 @@
     </Compile>
     <Compile Include="Paginas\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Regiones.aspx.cs">
+      <DependentUpon>Regiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Regiones.aspx.designer.cs">
+      <DependentUpon>Regiones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Vacaciones.aspx.cs">
       <DependentUpon>Vacaciones.aspx</DependentUpon>
@@ -778,14 +821,23 @@
     <Compile Include="Services\SvcAsignaturas.svc.cs">
       <DependentUpon>SvcAsignaturas.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\SvcAulas.svc.cs">
+      <DependentUpon>SvcAulas.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\SvcCursos.svc.cs">
       <DependentUpon>SvcCursos.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\SvcFestivos.svc.cs">
       <DependentUpon>SvcFestivos.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\SvcPaises.svc.cs">
+      <DependentUpon>SvcPaises.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\SvcPersonas.svc.cs">
       <DependentUpon>SvcPersonas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\SvcRegiones.svc.cs">
+      <DependentUpon>SvcRegiones.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\SvcVacaciones.svc.cs">
       <DependentUpon>SvcVacaciones.svc</DependentUpon>

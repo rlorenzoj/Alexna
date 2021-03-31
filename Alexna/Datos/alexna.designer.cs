@@ -51,6 +51,12 @@ namespace Alexna.Datos
     partial void InsertPaises(Paises instance);
     partial void UpdatePaises(Paises instance);
     partial void DeletePaises(Paises instance);
+    partial void InsertRegiones(Regiones instance);
+    partial void UpdateRegiones(Regiones instance);
+    partial void DeleteRegiones(Regiones instance);
+    partial void InsertAulas(Aulas instance);
+    partial void UpdateAulas(Aulas instance);
+    partial void DeleteAulas(Aulas instance);
     #endregion
 		
 		public alexnaDataContext() : 
@@ -136,6 +142,22 @@ namespace Alexna.Datos
 			get
 			{
 				return this.GetTable<Paises>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Regiones> Regiones
+		{
+			get
+			{
+				return this.GetTable<Regiones>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Aulas> Aulas
+		{
+			get
+			{
+				return this.GetTable<Aulas>();
 			}
 		}
 	}
@@ -1264,9 +1286,9 @@ namespace Alexna.Datos
 		
 		private int _Pais_Id;
 		
-		private string _Nombre;
+		private string _Pais_Nombre;
 		
-		private string _Observaciones;
+		private string _Pais_Observaciones;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1274,10 +1296,10 @@ namespace Alexna.Datos
     partial void OnCreated();
     partial void OnPais_IdChanging(int value);
     partial void OnPais_IdChanged();
-    partial void OnNombreChanging(string value);
-    partial void OnNombreChanged();
-    partial void OnObservacionesChanging(string value);
-    partial void OnObservacionesChanged();
+    partial void OnPais_NombreChanging(string value);
+    partial void OnPais_NombreChanged();
+    partial void OnPais_ObservacionesChanging(string value);
+    partial void OnPais_ObservacionesChanged();
     #endregion
 		
 		public Paises()
@@ -1305,42 +1327,310 @@ namespace Alexna.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nombre
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pais_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Pais_Nombre
 		{
 			get
 			{
-				return this._Nombre;
+				return this._Pais_Nombre;
 			}
 			set
 			{
-				if ((this._Nombre != value))
+				if ((this._Pais_Nombre != value))
 				{
-					this.OnNombreChanging(value);
+					this.OnPais_NombreChanging(value);
 					this.SendPropertyChanging();
-					this._Nombre = value;
-					this.SendPropertyChanged("Nombre");
-					this.OnNombreChanged();
+					this._Pais_Nombre = value;
+					this.SendPropertyChanged("Pais_Nombre");
+					this.OnPais_NombreChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string Observaciones
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pais_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Pais_Observaciones
 		{
 			get
 			{
-				return this._Observaciones;
+				return this._Pais_Observaciones;
 			}
 			set
 			{
-				if ((this._Observaciones != value))
+				if ((this._Pais_Observaciones != value))
 				{
-					this.OnObservacionesChanging(value);
+					this.OnPais_ObservacionesChanging(value);
 					this.SendPropertyChanging();
-					this._Observaciones = value;
-					this.SendPropertyChanged("Observaciones");
-					this.OnObservacionesChanged();
+					this._Pais_Observaciones = value;
+					this.SendPropertyChanged("Pais_Observaciones");
+					this.OnPais_ObservacionesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Regiones")]
+	public partial class Regiones : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Region_Id;
+		
+		private int _Pais_Id;
+		
+		private string _Region_Nombre;
+		
+		private string _Region_Observaciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRegion_IdChanging(int value);
+    partial void OnRegion_IdChanged();
+    partial void OnPais_IdChanging(int value);
+    partial void OnPais_IdChanged();
+    partial void OnRegion_NombreChanging(string value);
+    partial void OnRegion_NombreChanged();
+    partial void OnRegion_ObservacionesChanging(string value);
+    partial void OnRegion_ObservacionesChanged();
+    #endregion
+		
+		public Regiones()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Region_Id
+		{
+			get
+			{
+				return this._Region_Id;
+			}
+			set
+			{
+				if ((this._Region_Id != value))
+				{
+					this.OnRegion_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Region_Id = value;
+					this.SendPropertyChanged("Region_Id");
+					this.OnRegion_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pais_Id", DbType="Int NOT NULL")]
+		public int Pais_Id
+		{
+			get
+			{
+				return this._Pais_Id;
+			}
+			set
+			{
+				if ((this._Pais_Id != value))
+				{
+					this.OnPais_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Pais_Id = value;
+					this.SendPropertyChanged("Pais_Id");
+					this.OnPais_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Region_Nombre
+		{
+			get
+			{
+				return this._Region_Nombre;
+			}
+			set
+			{
+				if ((this._Region_Nombre != value))
+				{
+					this.OnRegion_NombreChanging(value);
+					this.SendPropertyChanging();
+					this._Region_Nombre = value;
+					this.SendPropertyChanged("Region_Nombre");
+					this.OnRegion_NombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Region_Observaciones
+		{
+			get
+			{
+				return this._Region_Observaciones;
+			}
+			set
+			{
+				if ((this._Region_Observaciones != value))
+				{
+					this.OnRegion_ObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Region_Observaciones = value;
+					this.SendPropertyChanged("Region_Observaciones");
+					this.OnRegion_ObservacionesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Aulas")]
+	public partial class Aulas : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Aula_Id;
+		
+		private string _Aula_Nombre;
+		
+		private bool _Aula_Activa;
+		
+		private string _Aula_Observaciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAula_IdChanging(int value);
+    partial void OnAula_IdChanged();
+    partial void OnAula_NombreChanging(string value);
+    partial void OnAula_NombreChanged();
+    partial void OnAula_ActivaChanging(bool value);
+    partial void OnAula_ActivaChanged();
+    partial void OnAula_ObservacionesChanging(string value);
+    partial void OnAula_ObservacionesChanged();
+    #endregion
+		
+		public Aulas()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Aula_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Aula_Id
+		{
+			get
+			{
+				return this._Aula_Id;
+			}
+			set
+			{
+				if ((this._Aula_Id != value))
+				{
+					this.OnAula_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Aula_Id = value;
+					this.SendPropertyChanged("Aula_Id");
+					this.OnAula_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Aula_Nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Aula_Nombre
+		{
+			get
+			{
+				return this._Aula_Nombre;
+			}
+			set
+			{
+				if ((this._Aula_Nombre != value))
+				{
+					this.OnAula_NombreChanging(value);
+					this.SendPropertyChanging();
+					this._Aula_Nombre = value;
+					this.SendPropertyChanged("Aula_Nombre");
+					this.OnAula_NombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Aula_Activa", DbType="Bit NOT NULL")]
+		public bool Aula_Activa
+		{
+			get
+			{
+				return this._Aula_Activa;
+			}
+			set
+			{
+				if ((this._Aula_Activa != value))
+				{
+					this.OnAula_ActivaChanging(value);
+					this.SendPropertyChanging();
+					this._Aula_Activa = value;
+					this.SendPropertyChanged("Aula_Activa");
+					this.OnAula_ActivaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Aula_Observaciones", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Aula_Observaciones
+		{
+			get
+			{
+				return this._Aula_Observaciones;
+			}
+			set
+			{
+				if ((this._Aula_Observaciones != value))
+				{
+					this.OnAula_ObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Aula_Observaciones = value;
+					this.SendPropertyChanged("Aula_Observaciones");
+					this.OnAula_ObservacionesChanged();
 				}
 			}
 		}
