@@ -34,6 +34,18 @@ namespace Alexna.Managers
             }
         }
 
+        public static List<Cursos> DameCursosActivos()
+        {
+            try
+            {
+                return db.Cursos.Where(c => c.Curso_Activo).OrderByDescending(c => c.Curso_Fecha_Inicio).ThenByDescending(c => c.Curso_Fecha_Fin).ThenBy(c => c.Curso_Nombre).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static bool ExisteCurso(int id)
         {
             return db.Cursos.Where(c => c.Curso_Id == id).Count() > 0;

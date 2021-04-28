@@ -35,6 +35,17 @@ namespace Alexna.Managers
             }
         }
 
+        public static List<Asignaturas> DameAsignaturasActivas()
+        {
+            try
+            {
+                return DameAsignaturas().Where(a => a.Asignatura_Activa).ToList();
+            } catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static bool ExisteAsignatura(int id)
         {
             return db.Asignaturas.Where(a => a.Asignatura_Id == id).Count() > 0;

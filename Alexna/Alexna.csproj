@@ -313,6 +313,7 @@
     <Content Include="Js\Asignaturas.js" />
     <Content Include="Js\Aulas.js" />
     <Content Include="Js\Cursos.js" />
+    <Content Include="Js\CursosEscolares.js" />
     <Content Include="Js\Extend.js" />
     <Content Include="Js\Festivos.js" />
     <Content Include="Js\Inicio.js" />
@@ -333,6 +334,7 @@
     <Content Include="Paginas\Asignaturas.aspx" />
     <Content Include="Paginas\Aulas.aspx" />
     <Content Include="Paginas\Cursos.aspx" />
+    <Content Include="Paginas\CursosEscolares.aspx" />
     <Content Include="Paginas\Festivos.aspx" />
     <Content Include="Paginas\inicio.aspx" />
     <Content Include="Paginas\Login.html" />
@@ -764,6 +766,13 @@
     </Compile>
     <Compile Include="Paginas\Cursos.aspx.designer.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\CursosEscolares.aspx.cs">
+      <DependentUpon>CursosEscolares.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\CursosEscolares.aspx.designer.cs">
+      <DependentUpon>CursosEscolares.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Festivos.aspx.cs">
       <DependentUpon>Festivos.aspx</DependentUpon>

@@ -22,5 +22,8 @@ namespace Alexna.Interfaces
 
         [OperationContract]
         List<Asignaturas> ObtenerListado();
+
+        [OperationContract]
+        List<Asignaturas> ObtenerListadoActivos();
     }
 }

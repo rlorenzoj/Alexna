@@ -31,5 +31,10 @@ namespace Alexna.Services
         {
             return Managers.ClsCursos.DameCursos();
         }
+
+        public List<Cursos> ObtenerListadoActivos()
+        {
+            return Managers.ClsCursos.DameCursosActivos();
+        }
     }
 }

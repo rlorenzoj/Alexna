@@ -85,6 +85,7 @@
                     <li class="nav-item dropdown" id="clases">
                         <a class="nav-link dropdown-toggle" id="clasesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clases</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="clasesDropdown">
+                            <a class="dropdown-item" href="CursosEscolares.aspx">Curso escolar</a>
                             <a class="dropdown-item" href="Grupos.aspx">Grupos</a>
                         </div>
                     </li>

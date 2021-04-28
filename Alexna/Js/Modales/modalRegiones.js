@@ -120,7 +120,6 @@
                 $select.append($option);
             }
         }
-
     }
 
     function pCargarRegistro(id) {

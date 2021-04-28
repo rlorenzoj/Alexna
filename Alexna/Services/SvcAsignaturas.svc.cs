@@ -30,5 +30,10 @@ namespace Alexna.Services
         {
             return Managers.ClsAsignaturas.DameAsignaturas();
         }
+
+        public List<Asignaturas> ObtenerListadoActivos()
+        {
+            return Managers.ClsAsignaturas.DameAsignaturasActivas();
+        }
     }
 }
